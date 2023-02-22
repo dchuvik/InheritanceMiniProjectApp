@@ -4,54 +4,154 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        List<IRental> rentals = new List<IRental>();
-        List<IPurchase> purchases = new List<IPurchase>();
+        Car toyota = new Car { NumberOfWheels = 4, ProductTitle = "Toyota Tacoma" };
+        Car honda = new Car { NumberOfWheels = 4, ProductTitle = "Honda Civic" };
+        Motorcycle harley = new Motorcycle { NumberOfWheels = 2, ProductTitle = "Harley, Davidson" };
+        Boat ship = new Boat { NumberOfWheels = 0, ProductTitle = "The Black Pearl" };
 
 
-        List<InventoryItemModel> inventory = new List<InventoryItemModel>();
+        List<IRidable> ridable = new List<IRidable>();
+        List<IDrivable> drivable = new List<IDrivable>();
 
-        var vehicle = new VehicleModel { DealerFee = 25, ProductName = "Toyota Camry" };
-        var book = new BookModel { ProductName = "Bible", NumberOfPages = 1000 };
-        var escavator = new Escavator { ProductName = "CAT Escavotor", QuantityInStock = 2 };
+        ridable.Add(harley);
+        ridable.Add(ship);
+        drivable.Add(honda);
+        drivable.Add(toyota);
 
-        rentals.Add(vehicle);
-        rentals.Add(escavator);
+        Console.Write($"Hello, would you like to ride or drive? (enter ride/drive): ");
+        string userResponse = Console.ReadLine().ToLower();
 
-        purchases.Add(book);
-        purchases.Add(vehicle);
-
-        Console.Write($"do you want to rent or puchase: ");
-        string rentalDecision = Console.ReadLine();
-
-        if (rentalDecision.ToLower() == "rent")
+        bool isDone = false;
+        do
         {
-
-            foreach (var rentable in rentals)
+            if (userResponse == "ride")
             {
-                Console.WriteLine($"Would you like to rent a {rentable.ProductName} (yes/no) : ");
-                if (Console.ReadLine().ToLower() == "yes")
+                var count = 1;
+                foreach (var vehicle in ridable)
                 {
-                    rentable.Rent();
+                    Console.Write($"Would you like to ride a {vehicle.ProductTitle}? (yes/no)");
+                    string rideResponse = Console.ReadLine().ToLower();
+
+                    if (rideResponse == "yes")
+                    {
+                        vehicle.Ride();
+                        isDone = true;
+                    }
+
+                    if (count == ridable.Count)
+                    {
+                        Console.WriteLine("There are no other drivable vehicles, Try again");
+                        Console.Write("Press Enter to continue...");
+                        Console.ReadLine();
+                        Console.Clear();
+                        count -= ridable.Count; 
+                    }
+                    count++;
+                }
+
+
+            }
+            else if (userResponse == "drive")
+            {
+                var count = 1;
+                foreach (var vehicle in drivable)
+                {
+                    Console.Write($"Would you like to drive a {vehicle.ProductTitle}? (yes/no): ");
+                    string rideResponse = Console.ReadLine().ToLower();
+
+                    if (rideResponse == "yes")
+                    {
+                        vehicle.Drive();
+                        isDone = true;
+                    }
+                    if (count == ridable.Count)
+                    {
+                        Console.WriteLine("There are no other drivable vehicles, Try again");
+                        Console.Write("Press Enter to continue...");
+                        Console.ReadLine();
+                        Console.Clear();
+                        count -= ridable.Count;
+                    }
+                    count++;
+
                 }
             }
-        }
-        else
-        {
-            foreach (var purchasable in purchases)
+            else
             {
-                Console.WriteLine($"Item: {purchasable.ProductName}");
-                Console.Write("Would you like to purchase this product (yes/no): ");
-                string wantToPurchase = Console.ReadLine();
-
-                if (wantToPurchase.ToLower() == "yes")
-                {
-                    purchasable.Purchase();
-                }
+                Console.WriteLine("We have no more vehicles.");
+                Console.Write("Press enter to try again... ");
+                Console.ReadLine();
+                Console.Clear();
             }
-        }
-
-
+        } while (!isDone);
 
         Console.ReadLine();
+
     }
 }
+
+public interface IProduct
+{
+    public string ProductTitle { get; set; }
+    public int NumberOfWheels { get; set; }
+}
+
+public interface IDrivable : IProduct
+{
+    public void Drive();
+}
+
+public interface IRidable : IProduct
+{
+    public void Ride();
+}
+
+public class Vehicle : IProduct
+{
+    public string ProductTitle { get; set; }
+    public int NumberOfWheels { get; set; }
+
+    public void TurnOn()
+    {
+        Console.WriteLine("Vehicle turns on");
+    }
+
+    public void TurnOff()
+    {
+        Console.WriteLine("Vehicle turns off");
+    }
+}
+
+public class Car : Vehicle, IDrivable
+{
+    public string ProductTitle { get; set; }
+    public int NumberOfWheels { get; set; }
+
+    public void Drive()
+    {
+        Console.WriteLine("Car goes vrooom");
+    }
+}
+
+public class Motorcycle : Vehicle, IRidable
+{
+    public string ProductTitle { get; set; }
+    public int NumberOfWheels { get; set; }
+
+    public void Ride()
+    {
+        Console.WriteLine("Motorcycle ride");
+    }
+}
+
+public class Boat : Vehicle, IProduct, IRidable
+{
+    public string ProductTitle { get; set; }
+    public int NumberOfWheels { get; set; }
+
+    public void Ride()
+    {
+        Console.WriteLine("Boat goes float");
+    }
+}
+
