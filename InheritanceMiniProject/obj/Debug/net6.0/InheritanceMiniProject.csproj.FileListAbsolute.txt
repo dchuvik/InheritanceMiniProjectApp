@@ -1,0 +1,15 @@
+C:\Users\dchuv\OneDrive\Desktop\repos\InheritanceMiniProjectApp\InheritanceMiniProject\bin\Debug\net6.0\InheritanceMiniProject.exe
+C:\Users\dchuv\OneDrive\Desktop\repos\InheritanceMiniProjectApp\InheritanceMiniProject\bin\Debug\net6.0\InheritanceMiniProject.deps.json
+C:\Users\dchuv\OneDrive\Desktop\repos\InheritanceMiniProjectApp\InheritanceMiniProject\bin\Debug\net6.0\InheritanceMiniProject.runtimeconfig.json
+C:\Users\dchuv\OneDrive\Desktop\repos\InheritanceMiniProjectApp\InheritanceMiniProject\bin\Debug\net6.0\InheritanceMiniProject.dll
+C:\Users\dchuv\OneDrive\Desktop\repos\InheritanceMiniProjectApp\InheritanceMiniProject\bin\Debug\net6.0\InheritanceMiniProject.pdb
+C:\Users\dchuv\OneDrive\Desktop\repos\InheritanceMiniProjectApp\InheritanceMiniProject\obj\Debug\net6.0\InheritanceMiniProject.csproj.AssemblyReference.cache
+C:\Users\dchuv\OneDrive\Desktop\repos\InheritanceMiniProjectApp\InheritanceMiniProject\obj\Debug\net6.0\InheritanceMiniProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dchuv\OneDrive\Desktop\repos\InheritanceMiniProjectApp\InheritanceMiniProject\obj\Debug\net6.0\InheritanceMiniProject.AssemblyInfoInputs.cache
+C:\Users\dchuv\OneDrive\Desktop\repos\InheritanceMiniProjectApp\InheritanceMiniProject\obj\Debug\net6.0\InheritanceMiniProject.AssemblyInfo.cs
+C:\Users\dchuv\OneDrive\Desktop\repos\InheritanceMiniProjectApp\InheritanceMiniProject\obj\Debug\net6.0\InheritanceMiniProject.csproj.CoreCompileInputs.cache
+C:\Users\dchuv\OneDrive\Desktop\repos\InheritanceMiniProjectApp\InheritanceMiniProject\obj\Debug\net6.0\InheritanceMiniProject.dll
+C:\Users\dchuv\OneDrive\Desktop\repos\InheritanceMiniProjectApp\InheritanceMiniProject\obj\Debug\net6.0\refint\InheritanceMiniProject.dll
+C:\Users\dchuv\OneDrive\Desktop\repos\InheritanceMiniProjectApp\InheritanceMiniProject\obj\Debug\net6.0\InheritanceMiniProject.pdb
+C:\Users\dchuv\OneDrive\Desktop\repos\InheritanceMiniProjectApp\InheritanceMiniProject\obj\Debug\net6.0\InheritanceMiniProject.genruntimeconfig.cache
+C:\Users\dchuv\OneDrive\Desktop\repos\InheritanceMiniProjectApp\InheritanceMiniProject\obj\Debug\net6.0\ref\InheritanceMiniProject.dll
